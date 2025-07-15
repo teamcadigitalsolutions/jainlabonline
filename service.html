@@ -147,91 +147,179 @@
 
 <!-- Service Start -->
 <div class="container-xxl py-5 bg-light">
-    <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 700px;">
-            <div class="d-inline-block py-1 px-2 m-2" style="background-color: #ced4da; border-radius: 60px;">
-  <p class="fw-bold py-1 px-4 m-0" style="
-    border: 2px solid #6c757d;
-    border-radius: 50px;
-    color: #343a40;
-    background-color: #ffffff;">
-    🧬 Jain Lab Services
-  </p>
-</div>
+  <style>
+    .badge-test {
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: 30px;
+      white-space: nowrap;
+      padding: 8px 16px;
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      color: #212529;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
 
-            <h1 class="mb-3">🔍 Trusted Diagnostics for Better Health</h1>
-            <p class="text-muted">We offer fast, accurate, and affordable diagnostic testing with the latest technology & expert care. 🏥💯</p>
+    .badge-test:hover {
+      background-color: #e2e6ea;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 12px;
+      margin-top: 1rem;
+    }
+
+    .view-more-btn {
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .view-more-btn.active {
+      background-color: #0d6efd !important;
+      color: #fff !important;
+      border-color: #0d6efd !important;
+    }
+  </style>
+
+  <!-- Modal -->
+  <div class="modal fade" id="viewMoreModal" tabindex="-1" aria-labelledby="viewMoreModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="viewMoreModalLabel">More Tests</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="row g-4">
-            <!-- Blood Tests -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item bg-white border border-primary rounded h-100 p-5 shadow-sm">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 65px; height: 65px;">
-                        <i class="fa fa-vial text-white fs-4"></i>
-                    </div>
-                    <h4 class="mb-2">💉 Blood Tests</h4>
-                    <p class="text-muted">From CBC to cholesterol, glucose, liver & kidney profiles — get quick and precise reports.</p>
-                </div>
-            </div>
-
-            <!-- Pathology -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item bg-white border border-primary rounded h-100 p-5 shadow-sm">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 65px; height: 65px;">
-                        <i class="fa fa-flask text-white fs-4"></i>
-                    </div>
-                    <h4 class="mb-2">🧫 Pathology</h4>
-                    <p class="text-muted">Biopsies, histopathology, and cytology — analyzed by certified pathologists 🔬.</p>
-                </div>
-            </div>
-
-            <!-- Home Collection -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item bg-white border border-primary rounded h-100 p-5 shadow-sm">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 65px; height: 65px;">
-                        <i class="fa fa-home text-white fs-4"></i>
-                    </div>
-                    <h4 class="mb-2">🚗 Home Sample Collection</h4>
-                    <p class="text-muted">Book from your phone 📱 and we’ll collect your sample from home. Safe & convenient!</p>
-                </div>
-            </div>
-
-            <!-- Microbiology -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item bg-white border border-primary rounded h-100 p-5 shadow-sm">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 65px; height: 65px;">
-                        <i class="fa fa-microscope text-white fs-4"></i>
-                    </div>
-                    <h4 class="mb-2">🦠 Microbiology</h4>
-                    <p class="text-muted">Urine, stool, and culture tests for accurate detection of infections & pathogens.</p>
-                </div>
-            </div>
-
-            <!-- Hormonal & Thyroid -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item bg-white border border-primary rounded h-100 p-5 shadow-sm">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 65px; height: 65px;">
-                        <i class="fa fa-dna text-white fs-4"></i>
-                    </div>
-                    <h4 class="mb-2">🧠 Hormonal & Thyroid</h4>
-                    <p class="text-muted">Advanced hormone profiles, thyroid panels (TSH, T3, T4), fertility & stress tests.</p>
-                </div>
-            </div>
-
-            <!-- Health Packages -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item bg-white border border-primary rounded h-100 p-5 shadow-sm">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 65px; height: 65px;">
-                        <i class="fa fa-notes-medical text-white fs-4"></i>
-                    </div>
-                    <h4 class="mb-2">📦 Health Check Packages</h4>
-                    <p class="text-muted">Pre-designed & custom test packages for families, employees & senior citizens 👨‍👩‍👧‍👦.</p>
-                </div>
-            </div>
+        <div class="modal-body" id="modalContent">
+          <p>Select a department to view more tests.</p>
         </div>
+      </div>
     </div>
+  </div>
+
+  <script>
+    const moreTests = {
+      biochemistry: ['Albumin', 'Amylase', 'Alkaline Phosphatase', 'Bilirubin(Direct)','Bilirubin(Total)', 'Calcium', 'Chloride', 'Cholesterol (Total / LDL)', 'Creatinine', 'Ferritin', 'Folic Acid', 'Glucose (F/PP/R)', 'GTT', 'HbA1C', 'HDL-Cholesterol', 'HLAB-27', 'Iron', 'Lipase', 'Microalbumin - Urine', 'Protein Electrophoresis', 'Protein (Total)', 'Serum Electrolytes', 'Serum Sodium', 'Serum Potassium', 'SGOT / AST', 'SGPT / ALT', 'TIBC / UIBC', 'Triglycerides', 'Troponin-I', 'Urea', 'Uric Acid', 'Urine Protein Creatinine Ratio', 'Vitamin D3 Total', 'Vitamin B12'],
+      endocrinology: ['LH', 'Prolactin', 'TSH', 'Testosterone (Total & Free)', 'ANA (Screen)', 'Anti-Ds DNA', 'Anti-microsomal AB (TPO)', 'Anti-thyroglobulin AB', 'Anti-CCP', 'Beta-HCG', 'Estradiol', 'Free T3 / Free T4', 'Total T3 / Total T4', 'FSH', 'Insulin - Fasting', 'Insulin Resistance with GTT'],
+      hematology: ['Absolute Eosinophil Count', 'Bleeding Time', 'Blood Group & Rh Typing', 'CBC', 'Clotting Time', 'D-Dimer', 'Direct Coomb’s Test', 'ESR', 'G6PD', 'Hemoglobin', 'Hematocrit', 'Hemoglobin Electrophoresis', 'Indirect Coomb’s Test', 'Malarial Parasite (Rapid)', 'Peripheral Smear', 'Platelet Count', 'PT-INR', 'PTT'],
+      microbiology: ['Body Fluid Culture & Sensitivity', 'HVS Culture', 'Culture & Sensitivity', 'KOH Prep', 'Stool C&S', 'Throat Swab C&S', 'Urine C&S', 'Urethral Swab C&S'],
+      clinical: ['Semen Analysis', 'Stool for Occult Blood', 'Stool Routine & Microscopy', 'Urine Pregnancy Test', 'Urine Routine & Microscopy'],
+      serology: ['CRP / CRP Hs', 'Chlamydia Ag', 'HBSAB-Titre', 'HCV Ag (Rapid)', 'HBsAg (Rapid)', 'H. Pylori Ab / Stool', 'HIV 1 & 2 Ab', 'H. Influenza', 'Mycoplasma Ab-IgG', 'Rheumatoid Factor', 'Rubella IgG / IgM', 'Serum IgE', 'Syphilis (VDRL)', 'TPHA', 'Urea Breath Test', 'Antibody Screen RBC', 'Widal']
+    };
+
+    function showMore(dept, title, btn) {
+      document.getElementById("viewMoreModalLabel").innerText = title + ' – More Tests';
+      const tests = moreTests[dept] || [];
+      const content = tests.map(test => `<span class="badge-test">${test}</span>`).join("");
+      document.getElementById("modalContent").innerHTML = tests.length > 0
+        ? `<div class="badge-grid">${content}</div>`
+        : "<p>No additional tests available.</p>";
+
+      document.querySelectorAll('.view-more-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+
+  <div class="container">
+    <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+      <div class="d-inline-block py-1 px-2 m-2" style="background-color: #ced4da; border-radius: 60px;">
+        <p class="fw-bold py-1 px-4 m-0" style="border: 2px solid #6c757d; border-radius: 50px; color: #343a40; background-color: #ffffff;">
+          🧬 Jain Lab Services
+        </p>
+      </div>
+      <h1 class="mb-3">🔬 Trusted Diagnostics for Better Health</h1>
+      <p class="text-muted">We offer fast, accurate, and affordable diagnostic testing with the latest technology and expert care.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="service-item bg-white border border-primary rounded p-4 shadow-sm text-center">
+          <h4 class="mb-2 text-primary">🧪 Biochemistry</h4>
+          <div class="badge-grid">
+            <span class="badge-test">Vitamin D3</span>
+            <span class="badge-test">SGPT / ALT</span>
+            <span class="badge-test">HbA1C</span>
+            <span class="badge-test">Creatinine</span>
+          </div>
+          <button class="btn btn-outline-primary view-more-btn" data-bs-toggle="modal" data-bs-target="#viewMoreModal" onclick="showMore('biochemistry', 'Biochemistry', this)">View More</button>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-item bg-white border border-primary rounded p-4 shadow-sm text-center">
+          <h4 class="mb-2 text-primary">🧬 Endocrinology</h4>
+          <div class="badge-grid">
+            <span class="badge-test">TSH</span>
+            <span class="badge-test">FSH</span>
+            <span class="badge-test">Prolactin</span>
+            <span class="badge-test">Testosterone</span>
+          </div>
+          <button class="btn btn-outline-primary view-more-btn" data-bs-toggle="modal" data-bs-target="#viewMoreModal" onclick="showMore('endocrinology', 'Endocrinology', this)">View More</button>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-item bg-white border border-primary rounded p-4 shadow-sm text-center">
+          <h4 class="mb-2 text-primary">🩸 Hematology</h4>
+          <div class="badge-grid">
+            <span class="badge-test">Hemoglobin</span>
+            <span class="badge-test">Platelet Count</span>
+            <span class="badge-test">CBC</span>
+            <span class="badge-test">PT-INR</span>
+          </div>
+          <button class="btn btn-outline-primary view-more-btn" data-bs-toggle="modal" data-bs-target="#viewMoreModal" onclick="showMore('hematology', 'Hematology', this)">View More</button>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-item bg-white border border-primary rounded p-4 shadow-sm text-center">
+          <h4 class="mb-2 text-primary">🧫 Microbiology</h4>
+          <div class="badge-grid">
+            <span class="badge-test">Urine C&S</span>
+            <span class="badge-test">Throat Swab</span>
+            <span class="badge-test">Stool Culture</span>
+            <span class="badge-test">HVS Culture</span>
+          </div>
+          <button class="btn btn-outline-primary view-more-btn" data-bs-toggle="modal" data-bs-target="#viewMoreModal" onclick="showMore('microbiology', 'Microbiology', this)">View More</button>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-item bg-white border border-primary rounded p-4 shadow-sm text-center">
+          <h4 class="mb-2 text-primary">🧪 Clinical Pathology</h4>
+          <div class="badge-grid">
+            <span class="badge-test">Urine Routine</span>
+            <span class="badge-test">Semen Analysis</span>
+            <span class="badge-test">Stool Occult Blood</span>
+            <span class="badge-test">UPT</span>
+          </div>
+          <button class="btn btn-outline-primary view-more-btn" data-bs-toggle="modal" data-bs-target="#viewMoreModal" onclick="showMore('clinical', 'Clinical Pathology', this)">View More</button>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-item bg-white border border-primary rounded p-4 shadow-sm text-center">
+          <h4 class="mb-2 text-primary">🧪 Serology</h4>
+          <div class="badge-grid">
+            <span class="badge-test">CRP</span>
+            <span class="badge-test">Rubella IgG</span>
+            <span class="badge-test">TPHA</span>
+            <span class="badge-test">Widal</span>
+          </div>
+          <button class="btn btn-outline-primary view-more-btn" data-bs-toggle="modal" data-bs-target="#viewMoreModal" onclick="showMore('serology', 'Serology', this)">View More</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- Service End -->
+
+
 
 
 

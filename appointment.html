@@ -692,15 +692,13 @@
 
 
     
-    <!-- Other Tests -->
-    <div class="col-12">
-      <label class="form-label fw-bold"> Other Tests</label>
-      <textarea class="form-control" id="otherTests" name="otherTests" readonly></textarea>
-
-      <br />
-      <a href="select-tests.html" class="btn btn-outline-secondary" onclick="saveFormData(); sessionStorage.setItem('returningFromTestSelect', 'true');">➕ Need any other test?</a>
-
-    </div>
+<!-- Other Tests -->
+<div class="col-12">
+  <label class="form-label fw-bold"> Other Tests</label>
+  <textarea class="form-control" id="otherTests" name="otherTests" readonly></textarea>
+  <br />
+  <a href="#" class="btn btn-outline-secondary" id="editTestsBtn">➕ Need any other test?</a>
+</div>
 
   
     <!-- Location -->
@@ -836,6 +834,32 @@
   });
 </script>
 
+<script>
+  function getQueryParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const testParam = getQueryParam('tests');
+    const textarea = document.getElementById('otherTests');
+
+    if (testParam) {
+      const testList = decodeURIComponent(testParam).replace(/\|/g, ', ');
+      textarea.value = testList;
+    }
+
+    document.getElementById('editTestsBtn').addEventListener('click', function (e) {
+      e.preventDefault();
+      const currentTests = encodeURIComponent(textarea.value.replace(/, /g, '|'));
+      let url = 'select-tests.html';
+      if (currentTests) {
+        url += '?tests=' + currentTests;
+      }
+      window.location.href = url;
+    });
+  });
+</script>
 
 
 

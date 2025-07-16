@@ -198,78 +198,8 @@
     </form>
   </div>
 
+
   <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('testForm');
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const selectedTests = Array.from(document.querySelectorAll('input[type=checkbox]:checked'))
-      .map(cb => cb.value);
-
-    const otherCheck = document.getElementById('otherSerologyCheck');
-    const otherText = document.getElementById('otherSerologyText')?.value.trim();
-
-    if (otherCheck?.checked) {
-      if (otherText) {
-        selectedTests.push(`Other Test: (${otherText})`);
-      } else {
-        selectedTests.push('Other Test: (Not specified)');
-      }
-    }
-
-    localStorage.setItem('selectedTests', selectedTests.join(', '));
-    sessionStorage.setItem('returningFromTestSelect', 'true');
-
-    // Redirect or simulate back navigation
-    history.back(); // or use window.location.href = "previousPage.html";
-  });
-
-  // Restore state from localStorage
-  const storedTests = localStorage.getItem('selectedTests');
-  if (storedTests) {
-    const selectedArray = storedTests.split(',').map(t => t.trim()).filter(Boolean);
-
-    document.querySelectorAll('input[type=checkbox]').forEach(cb => {
-      if (selectedArray.includes(cb.value)) {
-        cb.checked = true;
-      }
-    });
-
-    const otherTest = selectedArray.find(t => t.startsWith('Other Test:'));
-    if (otherTest) {
-      const otherCheck = document.getElementById('otherSerologyCheck');
-      const otherText = document.getElementById('otherSerologyText');
-
-      otherCheck.checked = true;
-      document.getElementById('otherSerologyInput').style.display = 'block';
-
-      const match = otherTest.match(/\((.*?)\)/);
-      if (match && match[1] !== 'Not specified') {
-        otherText.value = match[1];
-      }
-    }
-  }
-
-  // Toggle Other Test input
-  document.getElementById('otherSerologyCheck').addEventListener('change', function () {
-    const inputField = document.getElementById('otherSerologyInput');
-    const inputText = document.getElementById('otherSerologyText');
-
-    if (this.checked) {
-      inputField.style.display = 'block';
-      inputText.focus();
-    } else {
-      inputField.style.display = 'none';
-      inputText.value = '';
-    }
-  });
-});
-</script>
-
-
-  <!-- <script>
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('testForm');
 
@@ -342,7 +272,7 @@ document.getElementById('otherSerologyCheck').addEventListener('change', functio
     inputText.value = '';
   }
 });
-</script> -->
+</script>
 
 </body>
 </html>

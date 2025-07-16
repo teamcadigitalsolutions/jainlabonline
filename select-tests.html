@@ -198,63 +198,37 @@
     </form>
   </div>
 
+<script>
+  document.getElementById('testForm')
+    .addEventListener('submit', function(e) {
+      e.preventDefault();
+      const selectedTests = Array.from(
+        document.querySelectorAll('input[type=checkbox]:checked')
+      ).map(cb => cb.value);
 
-  <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('testForm');
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    // Collect all checked predefined tests
-    const selectedTests = Array.from(document.querySelectorAll('input[type=checkbox]:checked')).map(cb => cb.value);
-
-    // Check if 'Other test' checkbox is checked and has a value
-    const otherCheck = document.getElementById('otherSerologyCheck');
-    const otherText = document.getElementById('otherSerologyText')?.value.trim();
-
-    if (otherCheck?.checked) {
-      if (otherText) {
-        // If text entered, add in brackets
-        selectedTests.push(`Other Test: (${otherText})`);
+      if (selectedTests.length) {
+        localStorage.setItem('selectedTests', selectedTests.join(', '));
       } else {
-        // If checkbox checked but text empty, just add a marker
-        selectedTests.push('Other Test: (Not specified)');
+        localStorage.removeItem('selectedTests');
       }
-    }
+      sessionStorage.setItem('returningFromTestSelect', 'true');
 
-    localStorage.setItem('selectedTests', selectedTests.join(', '));
-    sessionStorage.setItem('returningFromTestSelect', 'true');
-    history.back();
-  });
-
-  // Restore checkbox and input state on page load
-  const storedTests = localStorage.getItem('selectedTests');
-  if (storedTests) {
-    const selectedArray = storedTests.split(',').map(t => t.trim()).filter(t => t);
-    document.querySelectorAll('input[type=checkbox]').forEach(cb => {
-      cb.checked = selectedArray.includes(cb.value);
+      // instead of window.location.href = 'appointment.html';
+      history.back();
     });
 
-    // Check if any test starts with 'Other Test:'
-    const otherTest = selectedArray.find(t => t.startsWith('Other Test:'));
-    if (otherTest) {
-      const otherCheck = document.getElementById('otherSerologyCheck');
-      const otherText = document.getElementById('otherSerologyText');
-
-      otherCheck.checked = true;
-      document.getElementById('otherSerologyInput').style.display = 'block';
-
-      // Extract text inside brackets
-      const match = otherTest.match(/\((.*?)\)/);
-      if (match && match[1] !== 'Not specified') {
-        otherText.value = match[1];
-      }
+  // restore checkbox state if user returns here
+  window.addEventListener('load', () => {
+    const stored = localStorage.getItem('selectedTests');
+    if (stored) {
+      const arr = stored.split(',').map(s => s.trim());
+      document.querySelectorAll('input[type=checkbox]').forEach(cb => {
+        cb.checked = arr.includes(cb.value);
+      });
     }
-  }
-});
+  });
+</script>
 
-  </script>
 
 
 

@@ -33,10 +33,6 @@
     <link href="css/style.css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    
-
-
 </head>
 
 <body>
@@ -692,13 +688,37 @@
 
 
     
-<!-- Other Tests -->
+   <!-- Other Tests -->
 <div class="col-12">
-  <label class="form-label fw-bold"> Other Tests</label>
+  <label class="form-label fw-bold">Other Tests</label>
   <textarea class="form-control" id="otherTests" name="otherTests" readonly></textarea>
+
   <br />
-  <a href="#" class="btn btn-outline-secondary" id="editTestsBtn">➕ Need any other test?</a>
+  <a href="select-tests.html" class="btn btn-outline-secondary" id="needTestBtn">➕ Need any other test?</a>
 </div>
+
+<script>
+  // When the page loads, check if returning from test selection
+  window.addEventListener('load', () => {
+    if (sessionStorage.getItem('returningFromTestSelect') === 'true') {
+      sessionStorage.removeItem('returningFromTestSelect');
+      const selectedTests = localStorage.getItem('selectedTests') || '';
+      document.getElementById('otherTests').value = selectedTests;
+    }
+  });
+
+  // When the "Need any other test?" link is clicked
+  document.getElementById('needTestBtn')
+    .addEventListener('click', function (event) {
+      event.preventDefault(); // prevent immediate navigation
+
+      if (confirm("Select extra tests from the list?")) {
+        sessionStorage.setItem('returningFromTestSelect', 'true');
+        window.location.href = 'select-tests.html';
+      }
+    });
+</script>
+
 
   
     <!-- Location -->
@@ -834,32 +854,6 @@
   });
 </script>
 
-<script>
-  function getQueryParam(name) {
-    const params = new URLSearchParams(window.location.search);
-    return params.get(name);
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const testParam = getQueryParam('tests');
-    const textarea = document.getElementById('otherTests');
-
-    if (testParam) {
-      const testList = decodeURIComponent(testParam).replace(/\|/g, ', ');
-      textarea.value = testList;
-    }
-
-    document.getElementById('editTestsBtn').addEventListener('click', function (e) {
-      e.preventDefault();
-      const currentTests = encodeURIComponent(textarea.value.replace(/, /g, '|'));
-      let url = 'select-tests.html';
-      if (currentTests) {
-        url += '?tests=' + currentTests;
-      }
-      window.location.href = url;
-    });
-  });
-</script>
 
 
 

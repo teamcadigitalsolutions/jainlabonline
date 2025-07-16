@@ -688,7 +688,7 @@
 
 
     
- <!-- Other Tests -->
+<!-- Other Tests -->
 <div class="col-12">
   <label class="form-label fw-bold">Other Tests</label>
   <textarea class="form-control" id="otherTests" name="otherTests" readonly></textarea>
@@ -698,6 +698,7 @@
     ➕ Need any other test?
   </button>
 </div>
+
 
 <!-- Test Selection Modal -->
 <div class="modal fade" id="testModal" tabindex="-1" aria-labelledby="testModalLabel" aria-hidden="true">
@@ -709,42 +710,176 @@
       </div>
 
       <div class="modal-body">
-        <h5>MICROBIOLOGY</h5>
+
+        <h5>BIOCHEMISTRY</h5>
         <div class="row mb-3">
-          <div class="col-md-6">
-            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">Body Fluid Culture & Sensitivity</button>
-            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">HVS (High Vaginal Swab)</button>
-            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">Culture & Sensitivity</button>
-            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">KOH Preparation for Fungus</button>
-          </div>
-          <div class="col-md-6">
-            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">Stool Culture & Sensitivity</button>
-            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">Throat Swab Culture & Sensitivity</button>
-            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">Urine Culture & Sensitivity</button>
-            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">Urethral Swab Culture & Sensitivity</button>
-          </div>
+  <div class="col-md-6">
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Albumin (Serum)" id="albumin"><label class="form-check-label" for="albumin">Albumin (Serum)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Amylase" id="amylase"><label class="form-check-label" for="amylase">Amylase</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Alkaline Phosphatase (ALP)" id="alp"><label class="form-check-label" for="alp">Alkaline Phosphatase (ALP)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Bilirubin (Direct)" id="bilirubinDirect"><label class="form-check-label" for="bilirubinDirect">Bilirubin (Direct)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Bilirubin (Total)" id="bilirubinTotal"><label class="form-check-label" for="bilirubinTotal">Bilirubin (Total)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Calcium" id="calcium"><label class="form-check-label" for="calcium">Calcium</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Calcium (Ionized)" id="calciumIonized"><label class="form-check-label" for="calciumIonized">Calcium (Ionized)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Chloride" id="chloride"><label class="form-check-label" for="chloride">Chloride</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Cholesterol (Total)" id="cholesterolTotal"><label class="form-check-label" for="cholesterolTotal">Cholesterol (Total)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Cholesterol LDL" id="cholesterolLDL"><label class="form-check-label" for="cholesterolLDL">Cholesterol LDL</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Creatinine" id="creatinine"><label class="form-check-label" for="creatinine">Creatinine</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Ferritin" id="ferritin"><label class="form-check-label" for="ferritin">Ferritin</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Folic Acid (Folate)" id="folate"><label class="form-check-label" for="folate">Folic Acid (Folate)</label></div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Glucose Fasting (F)" id="glucoseF"><label class="form-check-label" for="glucoseF">Glucose Fasting (F)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Glucose Postprandial (PP)" id="glucosePP"><label class="form-check-label" for="glucosePP">Glucose Postprandial (PP)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Glucose Random (R)" id="glucoseR"><label class="form-check-label" for="glucoseR">Glucose Random (R)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="GTT (Glucose Tolerance Test)" id="gtt"><label class="form-check-label" for="gtt">GTT (Glucose Tolerance Test)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="HbA1C" id="hba1c"><label class="form-check-label" for="hba1c">HbA1C</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="HDL-Cholesterol" id="hdl"><label class="form-check-label" for="hdl">HDL-Cholesterol</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="HLAB-27" id="hlab"><label class="form-check-label" for="hlab">HLAB-27</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Iron" id="iron"><label class="form-check-label" for="iron">Iron</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Lipid Profile" id="lipid"><label class="form-check-label" for="lipid">Lipid Profile</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Liver Function Test (LFT)" id="lft"><label class="form-check-label" for="lft">Liver Function Test (LFT)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Kidney Function Test (KFT)" id="kft"><label class="form-check-label" for="kft">Kidney Function Test (KFT)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="CBC" id="cbc"><label class="form-check-label" for="cbc">CBC</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Vitamin D3 Total (OH 25 Hydroxy)" id="vitd"><label class="form-check-label" for="vitd">Vitamin D3 Total (OH 25 Hydroxy)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Thyroid Profile" id="thyroid"><label class="form-check-label" for="thyroid">Thyroid Profile</label></div>
+  </div>
         </div>
 
-        <h5>PATHOLOGY</h5>
-        <div class="row">
-          <div class="col-md-6">
-            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">Complete Blood Count (CBC)</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">ESR</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">MP</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">Bilirubin T & D</button>
-          </div>
-          <div class="col-md-6">
-            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">SGOT</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">SGPT</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">Typhi-DOT</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">WIDAL</button>
-          </div>
+
+
+        <h5>HEMATOLOGY</h5>
+        <div class="row mb-3">
+  <div class="col-md-6">
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Absolute Eosinophil Count (AEC)" id="aec"><label class="form-check-label" for="aec">Absolute Eosinophil Count (AEC)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Bleeding Time (BT)" id="bt"><label class="form-check-label" for="bt">Bleeding Time (BT)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Blood Group & Rh typing" id="bloodgroup"><label class="form-check-label" for="bloodgroup">Blood Group & Rh typing</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="CBC" id="cbc"><label class="form-check-label" for="cbc">CBC</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Clotting Time (CT)" id="ct"><label class="form-check-label" for="ct">Clotting Time (CT)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="D-Dimer" id="ddimer"><label class="form-check-label" for="ddimer">D-Dimer</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Direct Coomb's Test (DCT)" id="dct"><label class="form-check-label" for="dct">Direct Coomb's Test (DCT)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="ESR" id="esr"><label class="form-check-label" for="esr">ESR</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="G6PD" id="g6pd"><label class="form-check-label" for="g6pd">G6PD</label></div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="HB (Hemoglobin)" id="hb"><label class="form-check-label" for="hb">HB (Hemoglobin)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Hematocrit (HCT)" id="hct"><label class="form-check-label" for="hct">Hematocrit (HCT)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Hemoglobin Electrophoresis" id="hemelec"><label class="form-check-label" for="hemelec">Hemoglobin Electrophoresis</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Indirect Coomb's Test (ICT)" id="ict"><label class="form-check-label" for="ict">Indirect Coomb's Test (ICT)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Malarial Parasite (Rapid)" id="malarial"><label class="form-check-label" for="malarial">Malarial Parasite (Rapid)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Peripheral Smear (PS)" id="ps"><label class="form-check-label" for="ps">Peripheral Smear (PS)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Platelet Count" id="platelet"><label class="form-check-label" for="platelet">Platelet Count</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="PT-INR (Prothrombin Time)" id="ptinr"><label class="form-check-label" for="ptinr">PT-INR (Prothrombin Time)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="PTT (Partial Thromboplastin Time)" id="ptt"><label class="form-check-label" for="ptt">PTT (Partial Thromboplastin Time)</label></div>
+  </div>
         </div>
+
+
+        <h5>MICROBIOLOGY</h5>
+        <div class="row mb-3">
+  <div class="col-md-6">
+    <div class="form-check"><input class="form-check-input test-checkbox" type="checkbox" value="Body Fluid Culture & Sensitivity" id="bodyFluidCulture"><label class="form-check-label" for="bodyFluidCulture">Body Fluid Culture & Sensitivity</label></div>
+    <div class="form-check"><input class="form-check-input test-checkbox" type="checkbox" value="HVS (High Vaginal Swab)" id="hvs"><label class="form-check-label" for="hvs">HVS (High Vaginal Swab)</label></div>
+    <div class="form-check"><input class="form-check-input test-checkbox" type="checkbox" value="Culture & Sensitivity" id="culture"><label class="form-check-label" for="culture">Culture & Sensitivity</label></div>
+    <div class="form-check"><input class="form-check-input test-checkbox" type="checkbox" value="KOH Preparation for Fungus" id="koh"><label class="form-check-label" for="koh">KOH Preparation for Fungus</label></div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-check"><input class="form-check-input test-checkbox" type="checkbox" value="Stool Culture & Sensitivity" id="stoolCulture"><label class="form-check-label" for="stoolCulture">Stool Culture & Sensitivity</label></div>
+    <div class="form-check"><input class="form-check-input test-checkbox" type="checkbox" value="Throat Swab Culture & Sensitivity" id="throatCulture"><label class="form-check-label" for="throatCulture">Throat Swab Culture & Sensitivity</label></div>
+    <div class="form-check"><input class="form-check-input test-checkbox" type="checkbox" value="Urine Culture & Sensitivity" id="urineCulture"><label class="form-check-label" for="urineCulture">Urine Culture & Sensitivity</label></div>
+    <div class="form-check"><input class="form-check-input test-checkbox" type="checkbox" value="Urethral Swab Culture & Sensitivity" id="urethralCulture"><label class="form-check-label" for="urethralCulture">Urethral Swab Culture & Sensitivity</label></div>
+  </div>
+        </div>
+   
+
+        <h5>ENDOCRINOLOGY</h5>
+        <div class="row mb-3">
+  <div class="col-md-6">
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="ANA (Antinuclear AB) Screen" id="ana"><label class="form-check-label" for="ana">ANA (Antinuclear AB) Screen</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="Anti-Ds DNA" id="antiDsDna"><label class="form-check-label" for="antiDsDna">Anti-Ds DNA</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="Anti-microsomal AB (TPO)" id="antiTpo"><label class="form-check-label" for="antiTpo">Anti-microsomal AB (TPO)</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="Anti-thyroglobulin AB" id="antiThyroglobulin"><label class="form-check-label" for="antiThyroglobulin">Anti-thyroglobulin AB</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="Anti-CCP (Anti-cyclic Citrullinated Peptide Antibody)" id="antiCcp"><label class="form-check-label" for="antiCcp">Anti-CCP (Anti-cyclic Citrullinated Peptide Antibody)</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="Beta-HCG" id="betaHcg"><label class="form-check-label" for="betaHcg">Beta-HCG</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="Estradiol" id="estradiol"><label class="form-check-label" for="estradiol">Estradiol</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="Free T3" id="freeT3"><label class="form-check-label" for="freeT3">Free T3</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="Total T3" id="totalT3"><label class="form-check-label" for="totalT3">Total T3</label></div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Free T4" id="freeT4"><label class="form-check-label" for="freeT4">Free T4</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="Total T4" id="totalT4"><label class="form-check-label" for="totalT4">Total T4</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="FSH (Follicular Stimulating Hormone)" id="fsh"><label class="form-check-label" for="fsh">FSH (Follicular Stimulating Hormone)</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="Insulin-Fasting" id="insulinFasting"><label class="form-check-label" for="insulinFasting">Insulin-Fasting</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="Insulin Resistance Test With GTT" id="insulinResistance"><label class="form-check-label" for="insulinResistance">Insulin Resistance Test With GTT</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="LH (Luteinizing Hormone)" id="lh"><label class="form-check-label" for="lh">LH (Luteinizing Hormone)</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="Prolactin" id="prolactin"><label class="form-check-label" for="prolactin">Prolactin</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="TSH (Thyroid Stimulating Hormone)" id="tsh"><label class="form-check-label" for="tsh">TSH (Thyroid Stimulating Hormone)</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="Testosterone Total" id="testosteroneTotal"><label class="form-check-label" for="testosteroneTotal">Testosterone Total</label></div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" value="Testosterone Free" id="testosteroneFree"><label class="form-check-label" for="testosteroneFree">Testosterone Free</label></div>
+  </div>
+        </div>
+        
+        <h5>CLINICAL PATHOLOGY</h5>
+        <div class="row mb-3">
+  <div class="col-md-6">
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Semen Analysis" id="semenAnalysis"><label class="form-check-label" for="semenAnalysis">Semen Analysis</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Stool For Occult Blood" id="stoolOccult"><label class="form-check-label" for="stoolOccult">Stool For Occult Blood</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Stool Routine & Microscopy" id="stoolRoutine"><label class="form-check-label" for="stoolRoutine">Stool Routine & Microscopy</label></div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Urine Pregnancy Test (UPT)" id="upt"><label class="form-check-label" for="upt">Urine Pregnancy Test (UPT)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Urine Routine & Microscopy" id="urineRoutine"><label class="form-check-label" for="urineRoutine">Urine Routine & Microscopy</label></div>
+  </div>
+        </div>
+
+        <h5>SEROLOGY</h5>
+        <div class="row mb-3">
+  <div class="col-md-6">
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="CRP (C-Reactive Protein)" id="crp"><label class="form-check-label" for="crp">CRP (C-Reactive Protein)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="CRP Hs" id="crphs"><label class="form-check-label" for="crphs">CRP Hs</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Chlamydia Ag" id="chlamydiaAg"><label class="form-check-label" for="chlamydiaAg">Chlamydia Ag</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="HBSAB-Titre" id="hbsab"><label class="form-check-label" for="hbsab">HBSAB-Titre</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="HCV Ag (Rapid)" id="hcv"><label class="form-check-label" for="hcv">HCV Ag (Rapid)</label></div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="HBsAg (Rapid)" id="hbsag"><label class="form-check-label" for="hbsag">HBsAg (Rapid)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="H. Pylori Ab" id="hpyloriab"><label class="form-check-label" for="hpyloriab">H. Pylori Ab</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="HIV-1 & 2 Ab Screening (Rapid)" id="hiv"><label class="form-check-label" for="hiv">HIV-1 & 2 Ab Screening (Rapid)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="H. Pylori Ag (Stool)" id="hpyloriag"><label class="form-check-label" for="hpyloriag">H. Pylori Ag (Stool)</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="H. Influenza" id="hinfluenza"><label class="form-check-label" for="hinfluenza">H. Influenza</label></div>
+  </div>
+        </div>
+
+        <h5>PROFILE</h5>
+        <div class="row mb-3">
+  <div class="col-md-6">
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Lipid Panel" id="lipidPanel"><label class="form-check-label" for="lipidPanel">Lipid Panel</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Liver Function Test (LFT)" id="lft"><label class="form-check-label" for="lft">Liver Function Test (LFT)</label></div>
+  </div>
+  
+  <div class="col-md-6">
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="Renal Function Test (RFT)" id="rft"><label class="form-check-label" for="rft">Renal Function Test (RFT)</label></div>
+  </div>
+        </div>
+
+
+
+        <hr/>
+        <h5>Other Custom Test</h5>
+        <input type="text" id="customTestInput" class="form-control" placeholder="Type any additional test here">
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
-      </div>
+  <button type="button" class="btn btn-secondary" id="clearTestsBtn">Clear Tests</button>
+  <button type="button" class="btn btn-primary" id="saveTestsBtn" data-bs-dismiss="modal">Save Tests</button>
+</div>
+
     </div>
   </div>
 </div>
@@ -1198,23 +1333,35 @@
 
 
 <script>
-document.querySelectorAll('.test-item').forEach(button => {
-  button.addEventListener('click', () => {
-    const testName = button.textContent;
-    const textarea = document.getElementById('otherTests');
+document.getElementById('saveTestsBtn').addEventListener('click', () => {
+    const selectedTests = [];
+    // Collect all checked inputs of type checkbox inside the modal
+    document.querySelectorAll('#testModal input[type="checkbox"]:checked').forEach(checkbox => {
+        selectedTests.push(checkbox.value);
+    });
 
-    // If already exists, skip
-    if (!textarea.value.includes(testName)) {
-      textarea.value += (textarea.value ? ', ' : '') + testName;
+    const customTest = document.getElementById('customTestInput').value.trim();
+    let finalTests = selectedTests.join(', ');
+
+    if (customTest) {
+        finalTests += finalTests ? `, (Other Test: ${customTest})` : `(Other Test: ${customTest})`;
     }
-  });
+
+    document.getElementById('otherTests').value = finalTests;
 });
+
+document.getElementById('clearTestsBtn').addEventListener('click', () => {
+    // Uncheck all checkboxes inside the modal
+    document.querySelectorAll('#testModal input[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
+
+    // Clear the custom test input
+    document.getElementById('customTestInput').value = '';
+
+    // Clear the Other Tests textarea
+    document.getElementById('otherTests').value = '';
+});
+
 </script>
-
-
-
-
-
 
 
 <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->

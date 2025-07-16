@@ -688,36 +688,68 @@
 
 
     
-   <!-- Other Tests -->
+ <!-- Other Tests -->
 <div class="col-12">
   <label class="form-label fw-bold">Other Tests</label>
   <textarea class="form-control" id="otherTests" name="otherTests" readonly></textarea>
 
   <br />
-  <a href="select-tests.html" class="btn btn-outline-secondary" id="needTestBtn">➕ Need any other test?</a>
+  <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#testModal">
+    ➕ Need any other test?
+  </button>
 </div>
 
-<script>
-  // When the page loads, check if returning from test selection
-  window.addEventListener('load', () => {
-    if (sessionStorage.getItem('returningFromTestSelect') === 'true') {
-      sessionStorage.removeItem('returningFromTestSelect');
-      const selectedTests = localStorage.getItem('selectedTests') || '';
-      document.getElementById('otherTests').value = selectedTests;
-    }
-  });
+<!-- Test Selection Modal -->
+<div class="modal fade" id="testModal" tabindex="-1" aria-labelledby="testModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="testModalLabel">🧬 Select Additional Tests</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
 
-  // When the "Need any other test?" link is clicked
-  document.getElementById('needTestBtn')
-    .addEventListener('click', function (event) {
-      event.preventDefault(); // prevent immediate navigation
+      <div class="modal-body">
+        <h5>MICROBIOLOGY</h5>
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">Body Fluid Culture & Sensitivity</button>
+            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">HVS (High Vaginal Swab)</button>
+            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">Culture & Sensitivity</button>
+            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">KOH Preparation for Fungus</button>
+          </div>
+          <div class="col-md-6">
+            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">Stool Culture & Sensitivity</button>
+            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">Throat Swab Culture & Sensitivity</button>
+            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">Urine Culture & Sensitivity</button>
+            <button type="button" class="btn btn-outline-primary btn-sm mb-1 test-item">Urethral Swab Culture & Sensitivity</button>
+          </div>
+        </div>
 
-      if (confirm("Select extra tests from the list?")) {
-        sessionStorage.setItem('returningFromTestSelect', 'true');
-        window.location.href = 'select-tests.html';
-      }
-    });
-</script>
+        <h5>PATHOLOGY</h5>
+        <div class="row">
+          <div class="col-md-6">
+            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">Complete Blood Count (CBC)</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">ESR</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">MP</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">Bilirubin T & D</button>
+          </div>
+          <div class="col-md-6">
+            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">SGOT</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">SGPT</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">Typhi-DOT</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 test-item">WIDAL</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
   
@@ -1164,55 +1196,22 @@
 </script>
 
 
-<script>
-  const testForm = document.getElementById('testForm');
-
-  // Handle form submit
-  testForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    // Collect selected test values
-    const selectedTests = Array.from(document.querySelectorAll('input[type=checkbox]:checked')).map(cb => cb.value);
-    const testString = selectedTests.join(', ');
-
-    // Update localStorage with current test selections
-    if (selectedTests.length > 0) {
-      localStorage.setItem('selectedTests', testString);
-    } else {
-      localStorage.removeItem('selectedTests');
-    }
-
-    // Flag that we are returning to appointment form
-    sessionStorage.setItem('returningFromTestSelect', 'true');
-
-    // Redirect to appointment page
-    window.location.href = "appointment.html";
-  });
-
-  // Restore previously selected tests (pre-check checkboxes)
-  window.addEventListener('load', function () {
-    const storedTests = localStorage.getItem('selectedTests');
-    if (storedTests) {
-      const selectedArray = storedTests.split(',').map(item => item.trim());
-
-      document.querySelectorAll('input[type=checkbox]').forEach(cb => {
-        cb.checked = selectedArray.includes(cb.value);
-      });
-    }
-  });
-</script>
-
 
 <script>
-window.addEventListener('load', function () {
-  if (sessionStorage.getItem('returningFromTestSelect') === 'true') {
-    const tests = localStorage.getItem('selectedTests') || '';
-    document.getElementById('otherTests').value = tests;
-    sessionStorage.removeItem('returningFromTestSelect');
-  }
+document.querySelectorAll('.test-item').forEach(button => {
+  button.addEventListener('click', () => {
+    const testName = button.textContent;
+    const textarea = document.getElementById('otherTests');
+
+    // If already exists, skip
+    if (!textarea.value.includes(testName)) {
+      textarea.value += (textarea.value ? ', ' : '') + testName;
+    }
+  });
 });
-
 </script>
+
+
 
 
 
